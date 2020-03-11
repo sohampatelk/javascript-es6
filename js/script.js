@@ -39,3 +39,12 @@ console.log(pairing.next().value);
 console.log(pairing.next().value);
 console.log(pairing.next().value); //this prints undefined .. because its out of array
 
+
+var FromArray = Array.from("abcdefghijklmnopqrstuvwxyz");
+console.log(FromArray);
+
+/**
+ * .filter() method
+ */
+var filtered = myArray.filter(function(element){return element>4; });
+console.log(filtered); //all mathches returned
