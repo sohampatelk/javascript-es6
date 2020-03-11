@@ -1,3 +1,5 @@
+//import "/Movies.Class.js"; //bring in our file
+
 //alert("Hello");
 /*leets see some of our newr array methods are..*/
 var myArray = ["test",3,4,6.5,true,false,"abc"];
@@ -189,3 +191,51 @@ console.log(myTestString.search(/soh/i));//irepresents any case means uppercase 
  */
 const myreplacedString = myTestString.replace(/soham/i,"World");
 console.log(myreplacedString);
+
+
+/**
+ * Blocks:
+ */
+{
+    const myBlockNestedVar = 38;
+}
+//console.log(myBlockNestedVar);
+
+//we can name blocks if we want
+myOrganizeName:{
+    //we can organize some code in here, and control scope of let/const
+    let myBlockNestedVar =55;//we used the same name in unnamed block !! that is okay, it was born in differently scoped block.
+    myBlockNestedVar++;
+    console.log(myBlockNestedVar);
+}
+
+/**
+ * Classes...
+ * Checkour import that is how we can access it.
+ */
+class Movie {
+    constructor(name, genre, year) {
+        this.name = name;
+        this.genre = genre;
+        this.year = year;
+    }
+    showPoster(){//This is a method!!We can name them as we would like.
+        const info = `
+            MOVIE INFO
+            ============
+            Name: ${this.name}
+            Genre: ${this.genre}
+            Year: ${this.year}
+        `;
+        return info;
+    }
+}
+const tron = new Movie("Disney","adventure",1982);
+const dragonheart = new Movie("dragonheart","Fantasy",1996);
+const godfather = new Movie("Godfather 2","action", 1974);
+
+console.log(tron);
+console.log(dragonheart);
+console.log(godfather);
+console.log(tron.showPoster());
+console.log(godfather.showPoster());
