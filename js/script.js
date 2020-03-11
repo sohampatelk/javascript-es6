@@ -140,6 +140,46 @@ findHighNum = (...args) => {// ...args will capture any number of arguments that
     return args;
 }
 
+//rest parameter must be last parameter
+/*findHighNums = (minNum = 0,...args)=>{
+    minNum = Number(minNum);
+    if(minNum === NaN ) minNum = 0;
+    const hignNum = args.filter((element)=>element>minNum);
+    return highNums; 
+}*/
+
+//console.log(findHighNums(5,2,6,7,5,3,10,45,67,345,-509));
+
 // ... represents array a=means we pass whole array
 addAllNums = (...nums) => nums.reduce((a,v) => a+v);
 console.log(addAllNums(2,3,4,5,6,7));
+
+/**
+ * Template Literals
+ */
+const hellovar = "Hello, World!!";
+const sampleName = "sam";
+//This is usefull inside of backticks.
+const myNewString = `Hey there, my name is ${sampleName}; I would do ${hellovar}!!`;
+console.log(myNewString);
+
+
+/**
+ * Spread operator
+ * dont get confusd with the rest parameter.
+ * remenber that rest parameter is always in parameter area of a function, nowhere else.spread is used anywhere else basically,
+ */
+const newArray = ["hello",",","World","!","this","is","Soham"];
+console.log(newArray);
+console.log(...newArray); // brough  the values in the array toghether as one string space saperated string means between each element there is a one space
+
+//spread operator seperates into seperate value
+const aBunchOfNums = [5,10,20,30,50];
+console.log(addAllNums(5,10,35,67,23)); //This and the below, are equivalant (our array gets broken up!!!)
+console.log(addAllNums(...aBunchOfNums)); //spreading an argument
+
+/**
+ * .search method
+ */
+const myTestString = "greetttings,Soham";
+console.log(myTestString.search(/soh/i));
