@@ -182,4 +182,10 @@ console.log(addAllNums(...aBunchOfNums)); //spreading an argument
  * .search method
  */
 const myTestString = "greetttings,Soham";
-console.log(myTestString.search(/soh/i));
+console.log(myTestString.search(/soh/i));//irepresents any case means uppercase or lowercase
+
+/**
+ * .replace() method
+ */
+const myreplacedString = myTestString.replace(/soham/i,"World");
+console.log(myreplacedString);
