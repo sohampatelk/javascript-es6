@@ -89,3 +89,37 @@ for (let myLetVar = 0; myLetVar < 10; myLetVar++) {
     console.log("myVar :" + myLetVar);
 }
 //console.log("myVar :" + myLetVar); // it is not working here outside. it is outof scope just workes in function.
+
+/**
+ * Const can not be reassigned. but its inside can be manupulated
+ */
+const myObj = {
+    name: "Soham",
+    age: 30
+}
+console.log(myObj);
+myObj.name = "Sandy";//can we update properties of an constant delcalred variable?
+console.log(myObj);  
+
+myObj.hobbies = [];
+myObj.hobbies.push("Mountain Climbing");
+console.log(myObj);
+
+//myObj={} //this would be error because of const. Only insides for a const can be manipulated. this is we call it reassigning vallues which can not be happen.
+
+//classic function declaration
+/*function myFunction(a,b){
+    return Number(a)+Number(b);
+}
+*/
+//ES6 Style:
+myFunction = (a,b) => Number(a) + Number(b);
+
+console.log(myFunction(5,6));
+
+//bigger function
+myOtherFunction = (a,b) => {
+    const myAnswer = Number(a+b);
+    return myAnswer;
+}
+console.log(myOtherFunction(34,5));
