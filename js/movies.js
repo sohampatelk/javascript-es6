@@ -1,5 +1,5 @@
 //creating a class
-class Movie{
+class movies{
     constructor(name,genre,year ){
         this.name = name;
         this.genre = genre;

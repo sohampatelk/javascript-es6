@@ -1,4 +1,4 @@
-//import "/Movies.Class.js"; //bring in our file
+//import "./movies"; //bring in our file
 
 //alert("Hello");
 /*leets see some of our newr array methods are..*/
@@ -219,6 +219,19 @@ class Movie {
         this.genre = genre;
         this.year = year;
     }
+
+    get getName(){ //How we retrieve property.
+        return this.name;
+    }
+    set setName(name){ //How we store the value of property.
+        if (typeof name == "string"){
+            this.name = name;
+        }else{
+            this.name = name.toString();
+        }
+        
+    }
+
     showPoster(){//This is a method!!We can name them as we would like.
         const info = `
             MOVIE INFO
