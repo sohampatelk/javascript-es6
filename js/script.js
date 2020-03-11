@@ -29,6 +29,7 @@ console.log(findAnIndex); //this time, it returns the index of value.
  * .entries()
  */
 var pairing = myArray.entries();
+console.log(pairing);
 console.log(pairing.next().value);
 console.log(pairing.next().value);
 console.log(pairing.next().value);
