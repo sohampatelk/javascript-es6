@@ -122,4 +122,20 @@ myOtherFunction = (a,b) => {
     const myAnswer = Number(a+b);
     return myAnswer;
 }
-console.log(myOtherFunction(34,5));
+console.log(myOtherFunction(34,5));                                                                                                                 
+
+/**
+ * Function default parameter values
+ */
+//we canse t defaults to prevent errors in case nothing gets passed in fora parameter
+addNums = (x=0,y=0) => x+y;
+console.log(addNums()); //no arguments vut our defalut values kicks in
+
+
+/**
+ * Rest Parameter
+ */
+findHighNum = (...args) => {
+    console.log(args);
+    return args;
+}
