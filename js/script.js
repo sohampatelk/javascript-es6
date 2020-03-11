@@ -135,7 +135,11 @@ console.log(addNums()); //no arguments vut our defalut values kicks in
 /**
  * Rest Parameter
  */
-findHighNum = (...args) => {
-    console.log(args);
+findHighNum = (...args) => {// ...args will capture any number of arguments that we pass
+    console.log(args); //it can be called by the name we had inbetween our parenthessis.
     return args;
 }
+
+// ... represents array a=means we pass whole array
+addAllNums = (...nums) => nums.reduce((a,v) => a+v);
+console.log(addAllNums(2,3,4,5,6,7));
