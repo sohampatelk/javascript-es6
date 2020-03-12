@@ -1,4 +1,8 @@
-//import "./movies"; //bring in our file
+import {Movie} from "./Movie.Class.js"; //bring in our file
+//You will have to use a server forthis to work !!browsers protect file system.
+//from java script in same folder
+import {BuyableMovie} from "./BuyableMovie.Class.js";
+import {Calculator} from "./Calculator.Class.js";
 
 //alert("Hello");
 /*leets see some of our newr array methods are..*/
@@ -115,134 +119,102 @@ console.log(myObj);
 }
 */
 //ES6 Style:
-myFunction = (a,b) => Number(a) + Number(b);
 
-console.log(myFunction(5,6));
+// myFunction = (a,b) => Number(a) + Number(b);
 
-//bigger function
-myOtherFunction = (a,b) => {
-    const myAnswer = Number(a+b);
-    return myAnswer;
-}
-console.log(myOtherFunction(34,5));                                                                                                                 
+// console.log(myFunction(5,6));
 
-/**
- * Function default parameter values
- */
-//we canse t defaults to prevent errors in case nothing gets passed in fora parameter
-addNums = (x=0,y=0) => x+y;
-console.log(addNums()); //no arguments vut our defalut values kicks in
+// //bigger function
+// myOtherFunction = (a,b) => {
+//     const myAnswer = Number(a+b);
+//     return myAnswer;
+// }
+// console.log(myOtherFunction(34,5));                                                                                                                 
 
-
-/**
- * Rest Parameter
- */
-findHighNum = (...args) => {// ...args will capture any number of arguments that we pass
-    console.log(args); //it can be called by the name we had inbetween our parenthessis.
-    return args;
-}
-
-//rest parameter must be last parameter
-/*findHighNums = (minNum = 0,...args)=>{
-    minNum = Number(minNum);
-    if(minNum === NaN ) minNum = 0;
-    const hignNum = args.filter((element)=>element>minNum);
-    return highNums; 
-}*/
-
-//console.log(findHighNums(5,2,6,7,5,3,10,45,67,345,-509));
-
-// ... represents array a=means we pass whole array
-addAllNums = (...nums) => nums.reduce((a,v) => a+v);
-console.log(addAllNums(2,3,4,5,6,7));
-
-/**
- * Template Literals
- */
-const hellovar = "Hello, World!!";
-const sampleName = "sam";
-//This is usefull inside of backticks.
-const myNewString = `Hey there, my name is ${sampleName}; I would do ${hellovar}!!`;
-console.log(myNewString);
+// /**
+//  * Function default parameter values
+//  */
+// //we canse t defaults to prevent errors in case nothing gets passed in fora parameter
+// addNums = (x=0,y=0) => x+y;
+// console.log(addNums()); //no arguments vut our defalut values kicks in
 
 
-/**
- * Spread operator
- * dont get confusd with the rest parameter.
- * remenber that rest parameter is always in parameter area of a function, nowhere else.spread is used anywhere else basically,
- */
-const newArray = ["hello",",","World","!","this","is","Soham"];
-console.log(newArray);
-console.log(...newArray); // brough  the values in the array toghether as one string space saperated string means between each element there is a one space
+// /**
+//  * Rest Parameter
+//  */
+// findHighNum = (...args) => {// ...args will capture any number of arguments that we pass
+//     console.log(args); //it can be called by the name we had inbetween our parenthessis.
+//     return args;
+// }
 
-//spread operator seperates into seperate value
-const aBunchOfNums = [5,10,20,30,50];
-console.log(addAllNums(5,10,35,67,23)); //This and the below, are equivalant (our array gets broken up!!!)
-console.log(addAllNums(...aBunchOfNums)); //spreading an argument
+// //rest parameter must be last parameter
+// /*findHighNums = (minNum = 0,...args)=>{
+//     minNum = Number(minNum);
+//     if(minNum === NaN ) minNum = 0;
+//     const hignNum = args.filter((element)=>element>minNum);
+//     return highNums; 
+// }*/
 
-/**
- * .search method
- */
-const myTestString = "greetttings,Soham";
-console.log(myTestString.search(/soh/i));//irepresents any case means uppercase or lowercase
+// //console.log(findHighNums(5,2,6,7,5,3,10,45,67,345,-509));
 
-/**
- * .replace() method
- */
-const myreplacedString = myTestString.replace(/soham/i,"World");
-console.log(myreplacedString);
+// // ... represents array a=means we pass whole array
+// addAllNums = (...nums) => nums.reduce((a,v) => a+v);
+// console.log(addAllNums(2,3,4,5,6,7));
+
+// /**
+//  * Template Literals
+//  */
+// const hellovar = "Hello, World!!";
+// const sampleName = "sam";
+// //This is usefull inside of backticks.
+// const myNewString = `Hey there, my name is ${sampleName}; I would do ${hellovar}!!`;
+// console.log(myNewString);
 
 
-/**
- * Blocks:
- */
-{
-    const myBlockNestedVar = 38;
-}
-//console.log(myBlockNestedVar);
+// /**
+//  * Spread operator
+//  * dont get confusd with the rest parameter.
+//  * remenber that rest parameter is always in parameter area of a function, nowhere else.spread is used anywhere else basically,
+//  */
+// const newArray = ["hello",",","World","!","this","is","Soham"];
+// console.log(newArray);
+// console.log(...newArray); // brough  the values in the array toghether as one string space saperated string means between each element there is a one space
 
-//we can name blocks if we want
-myOrganizeName:{
-    //we can organize some code in here, and control scope of let/const
-    let myBlockNestedVar =55;//we used the same name in unnamed block !! that is okay, it was born in differently scoped block.
-    myBlockNestedVar++;
-    console.log(myBlockNestedVar);
-}
+// //spread operator seperates into seperate value
+// const aBunchOfNums = [5,10,20,30,50];
+// console.log(addAllNums(5,10,35,67,23)); //This and the below, are equivalant (our array gets broken up!!!)
+// console.log(addAllNums(...aBunchOfNums)); //spreading an argument
 
-/**
- * Classes...
- * Checkour import that is how we can access it.
- */
-class Movie {
-    constructor(name, genre, year) {
-        this.name = name;
-        this.genre = genre;
-        this.year = year;
-    }
+// /**
+//  * .search method
+//  */
+// const myTestString = "greetttings,Soham";
+// console.log(myTestString.search(/soh/i));//irepresents any case means uppercase or lowercase
 
-    get getName(){ //How we retrieve property.
-        return this.name;
-    }
-    set setName(name){ //How we store the value of property.
-        if (typeof name == "string"){
-            this.name = name;
-        }else{
-            this.name = name.toString();
-        }
-        
-    }
+// /**
+//  * .replace() method
+//  */
+// const myreplacedString = myTestString.replace(/soham/i,"World");
+// console.log(myreplacedString);
 
-    showPoster(){//This is a method!!We can name them as we would like.
-        const info = `
-            MOVIE INFO
-            ============
-            Name: ${this.name}
-            Genre: ${this.genre}
-            Year: ${this.year}
-        `;
-        return info;
-    }
-}
+
+// /**
+//  * Blocks:
+//  */
+// {
+//     const myBlockNestedVar = 38;
+// }
+// //console.log(myBlockNestedVar);
+
+// //we can name blocks if we want
+// myOrganizeName:{
+//     //we can organize some code in here, and control scope of let/const
+//     let myBlockNestedVar =55;//we used the same name in unnamed block !! that is okay, it was born in differently scoped block.
+//     myBlockNestedVar++;
+//     console.log(myBlockNestedVar);
+// }
+
+
 const tron = new Movie("Disney","adventure",1982);
 const dragonheart = new Movie("dragonheart","Fantasy",1996);
 const godfather = new Movie("Godfather 2","action", 1974);
